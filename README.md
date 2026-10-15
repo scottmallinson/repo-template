@@ -12,7 +12,7 @@ humans and AI coding agents to work in side by side.
 | Git hooks          | [Husky](https://typicode.github.io/husky) + [lint-staged](https://github.com/lint-staged/lint-staged)   |
 | Secret scanning    | [Gitleaks](https://github.com/gitleaks/gitleaks) in CI                                                  |
 | CI                 | GitHub Actions: PR title/commit lint, format check, secret scan                                         |
-| Dependency updates | Dependabot (GitHub Actions + npm tooling)                                                               |
+| Dependency updates | Dependabot (GitHub Actions + npm tooling), grouped weekly, including security updates                   |
 | Collaboration      | Issue forms, PR template, CODEOWNERS, Code of Conduct, Security policy                                  |
 | Agent support      | `AGENTS.md` (+ `CLAUDE.md` pointer) describing how agents should work here                              |
 | Decisions          | Architecture Decision Records in `docs/adr`                                                             |

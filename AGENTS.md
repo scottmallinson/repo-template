@@ -30,6 +30,8 @@ Add build, test and lint commands for your stack here.
 - Keep changes small and focused; one logical change per PR.
 - Add or update tests and docs with every behavioural change.
 - Record significant design decisions in `docs/adr/`.
+- When adding a language or package manager, add its ecosystem to
+  `.github/dependabot.yml` so its dependencies stay up to date.
 
 ## Boundaries
 
