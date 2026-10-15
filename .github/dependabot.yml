@@ -1,17 +1,38 @@
+# Dependabot keeps every dependency manifest in this repository up to date.
+# When you add a stack (e.g. pip, gomod, cargo, docker), add a matching
+# `updates` entry below so its dependencies are covered too. See
+# https://docs.github.com/code-security/dependabot/working-with-dependabot/dependabot-options-reference
 version: 2
 updates:
   - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: weekly
+    cooldown:
+      default-days: 3
     commit-message:
       prefix: ci
+    groups:
+      actions:
+        applies-to: version-updates
+        patterns: ['*']
+      actions-security:
+        applies-to: security-updates
+        patterns: ['*']
+
   - package-ecosystem: npm
     directory: /
     schedule:
       interval: weekly
+    versioning-strategy: increase
+    cooldown:
+      default-days: 3
     commit-message:
       prefix: build
     groups:
       tooling:
+        applies-to: version-updates
+        patterns: ['*']
+      tooling-security:
+        applies-to: security-updates
         patterns: ['*']
