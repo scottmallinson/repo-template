@@ -12,7 +12,7 @@ humans and AI coding agents to work in side by side.
 | Git hooks          | [Husky](https://typicode.github.io/husky) + [lint-staged](https://github.com/lint-staged/lint-staged)   |
 | Secret scanning    | [Gitleaks](https://github.com/gitleaks/gitleaks) in CI                                                  |
 | CI                 | GitHub Actions: PR title/commit lint, format check, secret scan                                         |
-| Dependency updates | Dependabot (GitHub Actions + npm tooling), grouped weekly, including security updates                   |
+| Dependency updates | Dependabot (GitHub Actions + npm tooling), grouped weekly; minor/patch auto-merged when CI passes       |
 | Collaboration      | Issue forms, PR template, CODEOWNERS, Code of Conduct, Security policy                                  |
 | Agent support      | `AGENTS.md` (+ `CLAUDE.md` pointer) describing how agents should work here                              |
 | Decisions          | Architecture Decision Records in `docs/adr`                                                             |
@@ -38,6 +38,10 @@ if you'd rather wire up equivalents.
 
 4. Enable branch protection on `main`: require PRs, require the `CI` checks,
    require linear history (squash merge recommended).
+5. In **Settings → General**, enable **Allow auto-merge** so minor and patch
+   Dependabot PRs merge once CI passes. This relies on the required checks
+   from step 4. If you also require approving reviews, Dependabot PRs will
+   wait for one (see [ADR 0002](docs/adr/0002-auto-merge-dependabot-updates.md)).
 
 ## Everyday commands
 
